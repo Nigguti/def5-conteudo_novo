@@ -1,1 +1,37 @@
-t
+Conteudo - novo
+
+(periodo? estimar um dado: como acesso de usuários em meu site)
+e importante estimar isso para fazer uma métrica de quando terei que gastar de processamento aos acesso dos usuários
+
+Teste de Carga.
+
+Duração = 20s
+Conexão = 500
+Threads = 10
+
+500 x 10 = 5000 usuaários simultêneos - fazendo requisições a cada 20 segundos ?
+
+cluster?
+
+- docker-compose.yml
+version: '3'
+services:
+mongo:
+image: mongo
+volumes:
+- ./data:/data/db
+ports:
+- "27017:27017"
+
+docker-composo up -d
+docker ps
+
+ferramenta - npm auto cannon
+
+- npm i autocannon
+
+packaje.json "cannon": "npx autocannon -c 500 -d 20 -w 10 -renderStatusCodes --latency --debug --warmup [-c 1 -d 2] localhost:3000/books"
+
+npm run cannon
+
+
